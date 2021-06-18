@@ -18,7 +18,8 @@ async function run(): Promise<void> {
         minInput = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
     }
     
-    
+    console.log(minInput)
+    console.log(minInput * 60000)
     await wait(minInput * 60000)
 
   } catch (error) {

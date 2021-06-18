@@ -3,14 +3,24 @@ import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
+    const minString: string = core.getInput('minutes')
+    
+    //convert to integer
+    let minInput: number = parseInt(minString, 10);
+    
+    //check if the random is set
+    const random: string = core.getInput('random')
+    
+    //if random is set, get a random integer between 1 and input
+    if(random === 'true'){
+        const min: number = Math.ceil(1);
+        const max: number = Math.floor(minInput);
+        minInput = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+    }
+    
+    
+    await wait(minInput * 60000)
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
   } catch (error) {
     core.setFailed(error.message)
   }

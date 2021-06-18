@@ -1,11 +1,15 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'sleep'
+description: 'Action sleeps for set minutes or random minutes from 0 to set upper limit'
+author: 'Deepak'
 inputs:
-  milliseconds: # change this
+  minutes: # change this
     required: true
     description: 'input description here'
-    default: 'default value if applicable'
+    default: '1'
+  random:
+    required: false
+    description: 'set the random flag to true or false'
+    default: false
 runs:
   using: 'node12'
   main: 'dist/index.js'

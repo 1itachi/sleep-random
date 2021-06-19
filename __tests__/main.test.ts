@@ -16,7 +16,7 @@ test('wait 500 ms', async () => {
   expect(delta).toBeGreaterThan(450)
 })
 
-// shows how the runner will run a javascript action with env / stdout protocol
+//shows how the runner will run a javascript action with env / stdout protocol
 test('test runs', () => {
   process.env['INPUT_MINUTES'] = '5'
   const np = process.execPath

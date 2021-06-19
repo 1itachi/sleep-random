@@ -3,8 +3,6 @@ name: "Release"
 #Added workflow dispatch to release manually
 on:
    workflow_dispatch: 
-   push:
-     branches: [main]
 
 jobs:
   Release:

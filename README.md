@@ -16,7 +16,7 @@ Setting random to true will result in action sleeping for an arbitrary time with
 
 steps:
       - name: Wait
-        uses: 1itachi/sleep-random@v1
+        uses: 1itachi/sleep-random@v1.0.0
         with:
           minutes: '5'
           random: 'true'
@@ -27,7 +27,7 @@ steps:
 
 steps:
       - name: Wait
-        uses: 1itachi/sleep-random@v1
+        uses: 1itachi/sleep-random@v1.0.0
         with:
           minutes: '5'
  ``` 

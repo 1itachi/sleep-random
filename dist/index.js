@@ -43,16 +43,17 @@ function run() {
         try {
             const minString = core.getInput('minutes');
             //convert to integer
-            let minInput = parseInt(minString, 10);
+            const minInput = parseInt(minString, 10);
+            let milliSeconds = minInput * 60000;
             //check if the random is set
             const random = core.getInput('random');
             //if random is set, get a random integer between 1 and input
             if (random === 'true') {
                 const min = Math.ceil(1);
-                const max = Math.floor(minInput);
-                minInput = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+                const max = Math.floor(milliSeconds);
+                milliSeconds = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
             }
-            yield wait_1.wait(minInput * 60000);
+            yield wait_1.wait(milliSeconds);
         }
         catch (error) {
             core.setFailed(error.message);
@@ -83,7 +84,7 @@ function wait(milliseconds) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise(resolve => {
             if (isNaN(milliseconds)) {
-                throw new Error('milliseconds not a number');
+                throw new Error('Not a number');
             }
             setTimeout(() => resolve('done!'), milliseconds);
         });

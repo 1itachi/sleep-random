@@ -1,4 +1,4 @@
-name: 'sleep'
+name: 'sleep-random'
 description: 'Action sleeps for set minutes or random minutes from 0 to set upper limit'
 author: 'Deepak'
 inputs:

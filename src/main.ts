@@ -17,8 +17,9 @@ async function run(): Promise<void> {
       const max: number = Math.floor(milliSeconds)
       milliSeconds = Math.floor(Math.random() * (max - min + 1) + min) //The maximum is inclusive and the minimum is inclusive
     }
-
-    await wait(milliSeconds)
+	
+	console.log(milliSeconds)
+	await wait(milliSeconds)
   } catch (error) {
     core.setFailed(error.message)
   }

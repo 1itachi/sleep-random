@@ -18,7 +18,8 @@ async function run(): Promise<void> {
       milliSeconds = Math.floor(Math.random() * (max - min + 1) + min) //The maximum is inclusive and the minimum is inclusive
     }
 
-    console.log('Waiting for ' + milliSeconds + ' milliseconds')
+    const logMessage = 'Waiting for ${milliSeconds.toString()} milliseconds'
+    console.log(logMessage)
     await wait(milliSeconds)
   } catch (error) {
     core.setFailed(error.message)

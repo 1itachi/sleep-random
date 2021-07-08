@@ -53,7 +53,9 @@ function run() {
                 const max = Math.floor(milliSeconds);
                 milliSeconds = Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
             }
-            const logMessage = `Waiting for ${milliSeconds.toString()} milliseconds`;
+            const minutes = Math.floor(milliSeconds / 60000);
+            const seconds = Math.floor((milliSeconds % 60000) / 1000);
+            const logMessage = `Waiting for ${minutes}:${seconds < 10 ? '0' : ''}${seconds} minutes`;
             console.log(logMessage);
             yield wait_1.wait(milliSeconds);
         }

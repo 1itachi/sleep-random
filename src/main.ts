@@ -18,6 +18,12 @@ async function run(): Promise<void> {
       milliSeconds = Math.floor(Math.random() * (max - min + 1) + min) //The maximum is inclusive and the minimum is inclusive
     }
 
+    const minutes = Math.floor(milliSeconds / 60000)
+    const seconds = Math.floor((milliSeconds % 60000) / 1000)
+    const logMessage = `Waiting for ${minutes}:${
+      seconds < 10 ? '0' : ''
+    }${seconds} minutes`
+    console.log(logMessage)
     await wait(milliSeconds)
   } catch (error) {
     core.setFailed(error.message)

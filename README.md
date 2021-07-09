@@ -22,7 +22,7 @@ steps:
           random: 'true'
  ```   
  
- Using the action can be used without random to sleep for set minutes.
+Action can be used without random to sleep for set minutes.
 ```
 
 steps:

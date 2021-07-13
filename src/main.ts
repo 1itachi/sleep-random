@@ -23,7 +23,7 @@ async function run(): Promise<void> {
     const logMessage = `Waiting for ${minutes}:${
       seconds < 10 ? '0' : ''
     }${seconds} minutes`
-    console.log(logMessage)
+    core.info(logMessage)
     await wait(milliSeconds)
   } catch (error) {
     core.setFailed(error.message)

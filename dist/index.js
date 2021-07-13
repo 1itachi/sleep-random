@@ -56,7 +56,7 @@ function run() {
             const minutes = Math.floor(milliSeconds / 60000);
             const seconds = Math.floor((milliSeconds % 60000) / 1000);
             const logMessage = `Waiting for ${minutes}:${seconds < 10 ? '0' : ''}${seconds} minutes`;
-            console.log(logMessage);
+            core.info(logMessage);
             yield wait_1.wait(milliSeconds);
         }
         catch (error) {
